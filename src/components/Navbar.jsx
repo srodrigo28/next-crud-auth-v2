@@ -52,8 +52,14 @@ export default function Navbar() {
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push('/login');
+    let confirm = window.confirm("Deseja realmente sair?");
+    if(!confirm){
+      return
+    }else{
+      await supabase.auth.signOut();
+      router.push('/login');
+    }
+
   };
 
   return (
@@ -97,7 +103,7 @@ export default function Navbar() {
               onClick={handleLogout} 
               className="text-white px-3 py-2 cursor-pointer rounded-md bg-red-600 hover:bg-red-700 transition-colors duration-200"
             >
-              Logout
+              Sair
             </button>
           </div>
         </div>

@@ -31,9 +31,16 @@ export default function Login() {
     });
 
     if (error) {
-      setError(error.message);
+      // setError(error.message);
+      setError("Usuário ou senha não encontrados!");
     } else {
-      router.push('/dashboard');
+
+      alert('Seja bem vindo(a) ');
+
+      setTimeout( () => {
+        router.push('/dashboard');
+      }, 1000)
+
     }
   };
 
