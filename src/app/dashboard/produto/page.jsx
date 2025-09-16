@@ -110,11 +110,12 @@ export default function ProductList() {
             placeholder="Pesquisar por nome ou descrição..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-2 w-64 text-slate-900 border border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
+            className="px-4 py-2 w-64 text-slate-900 border border-gray-300 rounded-lg shadow-sm outline-0
+             focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
           />
           <button
             onClick={() => openProductModal()}
-            className="px-2 py-2 bg-emerald-600 text-white rounded-full font-bold
+            className="px-2 py-2 bg-emerald-600 text-white rounded-full font-bold cursor-pointer
              hover:bg-emerald-700 transition duration-300 shadow-md flex items-center space-x-2"
           >
             <Plus className="h-5 w-5" />

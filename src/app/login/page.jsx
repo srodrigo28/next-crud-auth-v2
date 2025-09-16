@@ -12,6 +12,17 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if(!email){
+      alert('Por favor preencher o campo E-mail!')
+      return
+    }
+
+     if(!password){
+      alert('Por favor preencher o campo Senha!')
+      return
+    }
+    
     setError(null);
 
     const { error } = await supabase.auth.signInWithPassword({
@@ -33,12 +44,12 @@ export default function Login() {
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-900">Email</label>
+            <label className="block text-sm font-medium text-slate-900 outline-0">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full text-slate-900 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full text-slate-900 px-3 py-2 outline-0 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               required
             />
           </div>
@@ -48,7 +59,7 @@ export default function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full text-slate-900 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full text-slate-900 px-3 py-2 border outline-0 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               required
             />
           </div>

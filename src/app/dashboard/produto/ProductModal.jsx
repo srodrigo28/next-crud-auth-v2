@@ -121,6 +121,26 @@ export default function ProductModal({ isOpen, onClose, productData, onProductSa
         imageUrl = publicUrlData.publicUrl
       }
 
+      if(!formData.nome){
+        alert("Nome é obrigatório!")
+        return
+      }
+
+      if(!formData.descricao){
+        alert("Descrição é obrigatório!")
+        return
+      }
+
+      if(!formData.preco){
+        alert("Preço é obrigatório!")
+        return
+      }
+
+      if(!imageUrl){
+        alert("Imagem é obrigatório!")
+        return
+      }
+
       const productDataToSave = {
         nome: formData.nome,
         descricao: formData.descricao,
@@ -199,8 +219,9 @@ export default function ProductModal({ isOpen, onClose, productData, onProductSa
               value={formData.nome}
               onChange={handleInputChange}
               placeholder="Nome do Produto"
-              required
-              className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
+               
+              className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 
+              focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150 text-slate-900 p-2 outline-0"
             />
           </label>
 
@@ -212,7 +233,8 @@ export default function ProductModal({ isOpen, onClose, productData, onProductSa
               onChange={handleInputChange}
               placeholder="Breve descrição do produto"
               rows="3"
-              className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
+              className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 
+              focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150 text-slate-900 p-2 outline-0"
             />
           </label>
 
@@ -226,8 +248,9 @@ export default function ProductModal({ isOpen, onClose, productData, onProductSa
                 value={formattedPrice}
                 onChange={handlePriceChange}
                 placeholder="0,00"
-                required
-                className="pl-10 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
+                 
+                className="pl-10 block w-full border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 
+                focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150 text-slate-900 p-2 outline-0"
               />
             </div>
           </label>
