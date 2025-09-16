@@ -12,6 +12,22 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    if(!nome){
+      alert('Por favor preencher o campo Nome!')
+      return
+    }
+
+    if(!email){
+      alert('Por favor preencher o campo E-mail!')
+      return
+    }
+
+     if(!password){
+      alert('Por favor preencher o campo Senha!')
+      return
+    }
+    
     setError(null);
 
     const { data, error: authError } = await supabase.auth.signUp({
@@ -38,7 +54,7 @@ export default function Register() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <div className="bg-white p-8 rounded-lg shadow-lg md:w-[350px] max-w-md px-10">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">Cadastro</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div onSubmit={handleRegister} className="space-y-4">
@@ -78,7 +94,7 @@ export default function Register() {
           <button
             type="submit"
             onClick={handleRegister}
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+            className="w-full cursor-pointer bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
           >
             Cadastrar
           </button>

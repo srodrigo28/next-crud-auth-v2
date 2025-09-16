@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
@@ -26,8 +27,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-slate-200 ">
+      <div className="bg-white p-8 rounded-lg shadow-lg md:w-[350px] max-w-md px-10">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">Login</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div onSubmit={handleLogin} className="space-y-4">
@@ -54,7 +55,7 @@ export default function Login() {
           <button
             type="submit"
             onClick={handleLogin}
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+            className="w-full bg-indigo-600 cursor-pointer text-white py-2 px-4 rounded-md hover:bg-indigo-700"
           >
             Entrar
           </button>

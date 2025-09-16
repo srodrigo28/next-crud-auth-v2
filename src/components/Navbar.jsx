@@ -60,12 +60,12 @@ export default function Navbar() {
     <div>
       <nav className="bg-slate-800 p-4 w-screen px-10 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
-          <a href="/" className="text-white text-lg font-bold w-44">MyApp</a>
+          <a href="/" className="text-white text-lg font-bold w-44">Gestor App</a>
           
           <div className='shadow-lg p-4 rounded-lg bg-gray-700 flex space-x-4'>
-            <a href="/dasboard" className="text-white">Produtos</a>
-            <a href="/dasboard" className="text-white">Pedidos</a>
-            <a href="/login" className="text-white">Sair</a>
+            <a href="/dasboard" className="text-white cursor-pointer hover:text-green-600">Produtos</a>
+            <a href="/dasboard" className="text-white cursor-pointer hover:text-green-600">Pedidos</a>
+            <a href="/login" className="text-white cursor-pointer hover:text-green-600">Dashboard</a>
           </div>
           
           {/* ✅ Área do usuário com foto e nome */}
@@ -95,7 +95,7 @@ export default function Navbar() {
             
             <button 
               onClick={handleLogout} 
-              className="text-white px-3 py-2 rounded-md bg-red-600 hover:bg-red-700 transition-colors duration-200"
+              className="text-white px-3 py-2 cursor-pointer rounded-md bg-red-600 hover:bg-red-700 transition-colors duration-200"
             >
               Logout
             </button>

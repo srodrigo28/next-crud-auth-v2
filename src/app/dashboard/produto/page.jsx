@@ -135,7 +135,7 @@ export default function ProductList() {
                 className="bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl 
                 hover:scale-105 overflow-hidden max-w-sm cursor-pointer mx-2 h-fit"
               >
-                <div className="relative w-full h-64 bg-gray-100">
+                <div className="relative w-full md:h-64 h-52 bg-gray-100">
                   {product.imagem ? (
                     <Image
                       src={product.imagem}
@@ -158,7 +158,7 @@ export default function ProductList() {
                 <div className="p-2">
                   <h3 className="text-lg font-bold text-gray-800 truncate mb-2 line-clamp-2 h-fit">{product.nome}</h3>
                   {product.descricao && (
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2 min-h-[2.5rem]">{product.descricao}</p>
+                    <p className="text-gray-600 text-sm line-clamp-2 min-h-[1.5rem]">{product.descricao}</p>
                   )}
                   <div className="flex items-center justify-between mb-2">
                     <p className="text-2xl font-bold text-emerald-600">
