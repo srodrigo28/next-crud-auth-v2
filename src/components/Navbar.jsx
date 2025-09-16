@@ -63,10 +63,9 @@ export default function Navbar() {
           <a href="/" className="text-white text-lg font-bold w-44">MyApp</a>
           
           <div className='shadow-lg p-4 rounded-lg bg-gray-700 flex space-x-4'>
-            <a href="/perfil" className="text-white mr-4">Perfil</a>
-            <a href="/produtos" className="text-white">Produtos</a>
-            <a href="/pedidos" className="text-white">Pedidos</a>
-            <a href="/servicos" className="text-white">Serviços</a>
+            <a href="/dasboard" className="text-white">Produtos</a>
+            <a href="/dasboard" className="text-white">Pedidos</a>
+            <a href="/login" className="text-white">Sair</a>
           </div>
           
           {/* ✅ Área do usuário com foto e nome */}

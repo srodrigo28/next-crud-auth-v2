@@ -110,7 +110,7 @@ export default function ProductList() {
             placeholder="Pesquisar por nome ou descrição..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-2 w-64 border border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
+            className="px-4 py-2 w-64 text-slate-900 border border-gray-300 rounded-lg shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-500 focus:ring-opacity-50 transition duration-150"
           />
           <button
             onClick={() => openProductModal()}
@@ -132,7 +132,8 @@ export default function ProductList() {
             filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 overflow-hidden max-w-sm cursor-pointer mx-2"
+                className="bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl 
+                hover:scale-105 overflow-hidden max-w-sm cursor-pointer mx-2 h-fit"
               >
                 <div className="relative w-full h-64 bg-gray-100">
                   {product.imagem ? (
@@ -154,12 +155,12 @@ export default function ProductList() {
                     </div>
                   )}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-800 truncate mb-2 line-clamp-2 min-h-[3.5rem]">{product.nome}</h3>
+                <div className="p-2">
+                  <h3 className="text-lg font-bold text-gray-800 truncate mb-2 line-clamp-2 h-fit">{product.nome}</h3>
                   {product.descricao && (
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2 min-h-[2.5rem]">{product.descricao}</p>
                   )}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-2">
                     <p className="text-2xl font-bold text-emerald-600">
                       {Number(product.preco).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
                     </p>
@@ -167,21 +168,20 @@ export default function ProductList() {
                   <div className="flex justify-between space-x-2">
                     <button
                       onClick={() => openProductModal(product)}
-                      className="flex-1 px-3 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300 flex items-center justify-center space-x-1"
+                      className="flex-1 px-2 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 
+                      transition duration-300 flex items-center justify-center space-x-1"
                     >
                       <Edit className="h-4 w-4" />
-                      <span>Editar</span>
                     </button>
                     <button
                       onClick={() => handleShareProduct(product)}
-                      className="flex-1 px-3 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 transition duration-300 flex items-center justify-center space-x-1"
+                      className="flex-1 px-2 py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600 transition duration-300 flex items-center justify-center space-x-1"
                     >
                       <Share2 className="h-4 w-4" />
-                      <span>WhatsApp</span>
                     </button>
                     <button
                       onClick={() => handleDeleteProduct(product.id)}
-                      className="px-3 py-2 bg-red-500 text-white rounded-lg text-sm font-medium hover:bg-red-600 transition duration-300 flex items-center justify-center"
+                      className="px-2 py-2 bg-red-500 text-white rounded-lg text-sm font-medium hover:bg-red-600 transition duration-300 flex items-center justify-center"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>
